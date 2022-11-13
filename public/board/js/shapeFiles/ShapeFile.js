@@ -685,7 +685,52 @@ let ShapeInfo = {
       }
     ],
     scale: '2 2'
+  },
+  Person: {
+    children: [
+        {
+            path: {
+                d: 'M 2 32 C 2 21 2 15 18 15 C 8 15 8 4 18 4 C 28 4 28 15 18 15 C 34 15 34 21 34 32 Z'
+            }
+        }
+    ],
+    scale: '2.2'
+  },
+  Container: {
+    children: [
+        {
+            rect: {
+                x: '10',
+                y: '10',
+                width: '80',
+                height: '50'
+            }
+        }
+    ]
+  },
+  Component: {
+    children: [
+        {
+            rect: {
+                x: '10',
+                y: '10',
+                width: '80',
+                height: '50'
+            }
+        }
+    ]
+  },
+  'Software System': {
+    children: [
+        {
+            rect: {
+                x: '10',
+                y: '10',
+                width: '80',
+                height: '50'
+            }
+        }
+    ]
   }
-};
 
-//
+};

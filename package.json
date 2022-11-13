@@ -10,9 +10,12 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@types/node": "^18.11.9",
         "axios": "^0.25",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
+        "mxgraph": "^4.2.2",
+        "mxgraph-type-definitions": "^1.0.6",
         "postcss": "^8.1.14"
     },
     "dependencies": {
@@ -23,6 +26,7 @@
         "jquery": "^3.2",
         "jquery.nicescroll": "^3.7.6",
         "jsrender": "^1.0.5",
+        "mxgraph-working": "^3.9.10",
         "popper.js": "^1.12",
         "select2": "^4.0.13",
         "sweetalert": "^1.1.3",

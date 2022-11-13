@@ -17,7 +17,7 @@
                                         <img src="{{ asset('/welcome/works/1.jpg')}}" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $sesion->title }}</h5>
-                                            <a href="#">Seguir editando</a>
+                                            <a href="{{ route('sesiones.show', $sesion->id )}}">Seguir editando</a>
                                         </div>
                                     </div>
                                 @endforeach

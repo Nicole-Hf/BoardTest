@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draw IO</title>
-    <link rel="Draw IO icon" type="image/png" href="{{ asset('board/images/logo-flat-logo.png')}}" />
+    <title>CFour Board</title>
     <link rel="stylesheet" href="{{ asset('board/css/layout.css')}}">
     <link rel="stylesheet" href="{{ asset('board/css/reset.css')}}">
     <link rel="stylesheet" href="{{ asset('board/css/fonts.css')}}">
@@ -15,27 +14,20 @@
 <body>
     <div class="main-wrapper">
         <header class="clearfix">
-
             <div class="logo-wrapper left">
-                <img src="{{ asset('board/images/logo-flat-logo.png')}}" alt="Draw IO Logo">
                 <a href="#" title="Draw IO Clone">
-                    <h1 style="display: inline-block">DRAW IO CLONE</h1>
+                    <h1 style="display: inline-block">{{ $sesion->title }}</h1>
                 </a>
             </div>
-
             <div class="export-wrapper right">
                 <button class="btn-save-progress"> Save Progress </button>
-
                 <button class="btn-save">Export as </button>
-
                 <input type="radio" name="export-extension" value="svg" id="export-svg">
                 <span>SVG</span>
-
                 <input type="radio" name="export-extension" value="png" id="export-png">
                 <span>PNG</span>
                 <a class="download-link" href="#" download=""></a>
             </div>
-
         </header>
         <main>
             <!-- Modal to restore drafts -->
@@ -44,30 +36,22 @@
                     <div class="modal-header">
                         <h2>Load Previous Drafts</h2>
                     </div>
-
                     <div class="modal-body">
                         <div class="draft-control-wrapper clearfix">
                             <div class="draft-select-wrapper left">
                                 <span>Select a draft to continue</span>
-                                <select id="saved-draft-selector">
-
-                                </select>
+                                <select id="saved-draft-selector"></select>
                             </div>
-
                             <div class="draft-button-wrapper right">
                                 <button id="btn-edit-draft">Edit</button>
                                 <button id="btn-cancel-draft">Cancel</button>
                             </div>
                         </div>
-
                         <svg class="saved-draft-preview" version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xhtml="http://www.w3.org/1999/xhtml"
                             width="100%" height="60%" viewbox="0 0 800 800">
-
                         </svg>
-
                     </div>
-
                 </div>
             </div>
             <div class="show-shape-info hide">
@@ -83,7 +67,6 @@
                         </g>
                     </svg>
                 </div>
-
             </div>
             <div class="clearfix">
                 <div class="sidebar-left left">
@@ -675,12 +658,11 @@
                                 </g>
                             </a>
                         </svg>
-                    </div>
 
+                    </div>
                 </div>
                 <svg id="drawing-area" class="drawing-area left" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
                 </svg>
 
                 <div class="sidebar-right left">
@@ -753,11 +735,9 @@
                         <div>
                             <span>Size</span>
                             <input type="number" name="font-size" id="font-size">
-
                             <span>Color</span>
                             <input type="color" name="font-color" id="font-color">
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -784,8 +764,9 @@
     <script src="{{ asset('board/js/leftSideBar.js')}}"></script>
     <script src="{{ asset('board/js/shapeControls.js')}}"></script>
     <script src="{{ asset('board/js/eventHandlers/shapeEventListener.js')}}"></script>
-
     <script src="{{ asset('board/js/rightSideBar.js')}}"></script>
     <script src="{{ asset('board/js/eventHandlers/drag.js')}}"></script>
+
+    <script src="{{ asset('board/js/c4proof.js')}}"></script>
 </body>
 </html>
