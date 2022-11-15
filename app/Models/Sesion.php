@@ -13,6 +13,7 @@ class Sesion extends Model
 
     protected $fillable = [
         'title',
+        'description',
         'code',
         'user_id'
     ];
@@ -28,4 +29,12 @@ class Sesion extends Model
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function collaborators() {
+        return $this->hasMany(Collaborator::class, 'sesion_id');
+    }
+
+    /*public function users() {
+        return $this->belongsToMany(User::class, 'user_id');
+    }*/
 }

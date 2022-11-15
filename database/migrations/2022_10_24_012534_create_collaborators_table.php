@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('collaborators', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('sesion_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             $table->softDeletes();
 
             $table->foreign('user_id')->on('users')->references('id')->onDelete('cascade');
+            $table->foreign('sesion_id')->on('sesions')->references('id')->onDelete('cascade');
         });
     }
 

@@ -61,7 +61,7 @@ class SesionController extends Controller
     {
         $sesion = Sesion::findOrFail($id);
         //return view('sesiones.board', compact('sesion'));
-        return view('sesiones.c4board', compact('sesion'));
+        return view('sesiones.index', compact('sesion'));
     }
 
     /**

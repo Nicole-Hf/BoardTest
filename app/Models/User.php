@@ -46,7 +46,12 @@ class User extends Authenticatable
         return $this->hasMany(Sesion::class, 'user_id');
     }
 
-    public function collaborator() {
-        return $this->hasOne(Collaborator::class, 'user_id');
+    public function collaborators() {
+        return $this->hasMany(Collaborator::class, 'user_id');
     }
+
+    /*public function collaborators() {
+        return $this->belongsToMany(Sesion::class, 'user_id');
+    }*/
+
 }
