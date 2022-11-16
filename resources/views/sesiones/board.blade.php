@@ -766,7 +766,5 @@
     <script src="{{ asset('board/js/eventHandlers/shapeEventListener.js')}}"></script>
     <script src="{{ asset('board/js/rightSideBar.js')}}"></script>
     <script src="{{ asset('board/js/eventHandlers/drag.js')}}"></script>
-
-    <script src="{{ asset('board/js/c4proof.js')}}"></script>
 </body>
 </html>

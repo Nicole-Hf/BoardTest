@@ -44,23 +44,26 @@ class SesionController extends Controller
 
         $sesion = new Sesion();
         $sesion->title = $request->title;
+        $sesion->description = $request->description;
         $sesion->code = Str::uuid();
         $sesion->user_id = auth()->user()->id;
         $sesion->save();
 
-        return redirect()->route('sesiones.show', $sesion->id);
+        return redirect()->route('sesiones.show', $sesion->code);
+        //return redirect()->route('sesiones.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        $sesion = Sesion::findOrFail($id);
-        //return view('sesiones.board', compact('sesion'));
+        //$uuid = substr($slug, -36);
+        $sesion = Sesion::where(['code' => $code])->firstOrFail();
+        //$sesion = Sesion::findOrFail($id);
         return view('sesiones.index', compact('sesion'));
     }
 

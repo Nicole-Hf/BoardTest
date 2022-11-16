@@ -37,6 +37,7 @@ background=Background
 backgroundColor=Background Color
 backgroundImage=Background Image
 basic=Basic
+c4=C4
 block=Block
 blockquote=Blockquote
 bold=Bold

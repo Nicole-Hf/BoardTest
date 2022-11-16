@@ -14,10 +14,10 @@
                             <div class="row">
                                 @foreach ($sesiones as $sesion)
                                     <div class="card" style="width: 18rem;">
-                                        <img src="{{ asset('/welcome/works/1.jpg')}}" class="card-img-top" alt="...">
+                                        <img src="{{ asset('welcome/img/works/1.jpg')}}" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $sesion->title }}</h5>
-                                            <a href="{{ route('sesiones.show', $sesion->id )}}">Seguir editando</a>
+                                            <a href="{{ route('sesiones.show', $sesion->code )}}">Seguir editando</a>
                                         </div>
                                     </div>
                                 @endforeach

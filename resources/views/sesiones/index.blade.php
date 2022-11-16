@@ -54,8 +54,13 @@
 	<script type="text/javascript" src="{{ asset('javascript/js/Menus.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('javascript/js/Toolbar.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('javascript/js/Dialogs.js')}}"></script>
+
+    <link rel="stylesheet" href="{{ asset('board/css/style.css')}}">
 </head>
 <body class="geEditor">
+    <nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+    </nav>
 	<script type="text/javascript">
 		// Extends EditorUi to update I/O action states based on availability of backend
 		(function()
@@ -68,6 +73,7 @@
 				this.actions.get('export').setEnabled(true);
 
 				// Updates action states which require a backend
+                Editor.useLocalStorage = true;
 				if (!Editor.useLocalStorage)
 				{
 					mxUtils.post(OPEN_URL, '', mxUtils.bind(this, function(req)
@@ -75,10 +81,11 @@
 						var enabled = req.getStatus() != 404;
 						this.actions.get('open').setEnabled(enabled || Graph.fileSupport);
 						this.actions.get('import').setEnabled(enabled || Graph.fileSupport);
-						this.actions.get('save').setEnabled(enabled || Graph.fileSupport);
-						this.actions.get('saveAs').setEnabled(enabled || Graph.fileSupport);
-						this.actions.get('export').setEnabled(enabled || Graph.fileSupport);
+						this.actions.get('save').setEnabled(enabled);
+						this.actions.get('saveAs').setEnabled(enabled);
+						this.actions.get('export').setEnabled(enabled);
 					}));
+                    var temp = localStorage[filename.xml];
 				}
 			};
 
